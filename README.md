@@ -1,4 +1,0 @@
-Selenium-
-=========
-
-Selenium-Docker
