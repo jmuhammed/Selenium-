@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="ValmontSelenium">
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="../../eclipse"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.7"/>
+    <property name="source" value="1.7"/>
+    <path id="ValmontSelenium.classpath">
+        <pathelement location="bin"/>
+        <pathelement location="libs/apache-mime4j-0.6.jar"/>
+        <pathelement location="libs/bsh-1.3.0.jar"/>
+        <pathelement location="libs/cglib-nodep-2.1_3.jar"/>
+        <pathelement location="libs/commons-codec-1.8.jar"/>
+        <pathelement location="libs/commons-collections-3.2.1.jar"/>
+        <pathelement location="libs/commons-exec-1.1.jar"/>
+        <pathelement location="libs/commons-io-2.2.jar"/>
+        <pathelement location="libs/commons-jxpath-1.3.jar"/>
+        <pathelement location="libs/commons-lang3-3.1.jar"/>
+        <pathelement location="libs/commons-logging-1.1.1.jar"/>
+        <pathelement location="libs/cssparser-0.9.11.jar"/>
+        <pathelement location="libs/guava-15.0.jar"/>
+        <pathelement location="libs/hamcrest-core-1.3.jar"/>
+        <pathelement location="libs/hamcrest-library-1.3.jar"/>
+        <pathelement location="libs/htmlunit-2.13.jar"/>
+        <pathelement location="libs/htmlunit-core-js-2.13.jar"/>
+        <pathelement location="libs/httpclient-4.3.1.jar"/>
+        <pathelement location="libs/httpcore-4.3.jar"/>
+        <pathelement location="libs/httpmime-4.3.1.jar"/>
+        <pathelement location="libs/ini4j-0.5.2.jar"/>
+        <pathelement location="libs/jcommander-1.29.jar"/>
+        <pathelement location="libs/jetty-websocket-8.1.8.jar"/>
+        <pathelement location="libs/jna-3.4.0.jar"/>
+        <pathelement location="libs/jna-platform-3.4.0.jar"/>
+        <pathelement location="libs/json-20080701.jar"/>
+        <pathelement location="libs/junit-dep-4.11.jar"/>
+        <pathelement location="libs/nekohtml-1.9.19.jar"/>
+        <pathelement location="libs/netty-3.5.7.Final.jar"/>
+        <pathelement location="libs/operadriver-1.5.jar"/>
+        <pathelement location="libs/phantomjsdriver-1.1.0.jar"/>
+        <pathelement location="libs/protobuf-java-2.4.1.jar"/>
+        <pathelement location="libs/sac-1.3.jar"/>
+        <pathelement location="libs/selenium-java-2.41.0-srcs.jar"/>
+        <pathelement location="libs/selenium-java-2.41.0.jar"/>
+        <pathelement location="libs/serializer-2.7.1.jar"/>
+        <pathelement location="libs/testng-6.8.5.jar"/>
+        <pathelement location="libs/xalan-2.7.1.jar"/>
+        <pathelement location="libs/xercesImpl-2.10.0.jar"/>
+        <pathelement location="libs/xml-apis-1.4.01.jar"/>
+        <pathelement location="JxlJar/jxl.jar"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="ValmontSelenium.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target name="Home (1)">
+        <java classname="com.valmont.selenium.Home" failonerror="true" fork="yes">
+            <classpath refid="ValmontSelenium.classpath"/>
+        </java>
+    </target>
+</project>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" parallel="none">
+  <parameter name="pRegressionLoginDataDriven" value="RegressionLoginDataDriven()"/>
+  <parameter name="pFunctionalLoginDataDriven" value="FunctionalLoginDataDriven()"/>
+  <test name="Test(failed)" parallel="none">
+    <parameter name="pRegressionLoginDataDriven" value="RegressionLoginDataDriven()"/>
+    <parameter name="pFunctionalLoginDataDriven" value="FunctionalLoginDataDriven()"/>
+    <classes>
+      <class name="com.test.methods.TestMethod">
+        <methods>
+          <include name="setUp"/>
+          <include name="testLogin_Functional"/>
+        </methods>
+      </class> <!-- com.test.methods.TestMethod -->
+      <class name="com.data.driven.DataSourceIterator">
+        <methods>
+          <include name="testLogin_Regression"/>
+        </methods>
+      </class> <!-- com.data.driven.DataSourceIterator -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
