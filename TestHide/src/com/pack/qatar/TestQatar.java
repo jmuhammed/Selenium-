@@ -1,4 +1,4 @@
-package com.pack.qatar;
+//package com.pack.qatar;
 import java.util.List;
 
 import org.openqa.selenium.*;
@@ -20,8 +20,8 @@ public class TestQatar {
 		//capability.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
 		
 		
-	//	WebDriver driver = new ChromeDriver(options);
-		WebDriver driver=new FirefoxDriver();
+		WebDriver driver = new ChromeDriver(options);
+		//WebDriver driver=new FirefoxDriver();
 		JavascriptExecutor jex=(JavascriptExecutor)driver;
 		driver.get("http://www.qatarairways.com");
 		try {
