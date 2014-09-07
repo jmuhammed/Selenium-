@@ -2,22 +2,13 @@
 import java.util.List;
 
 import org.openqa.selenium.*;
-/*import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.CapabilityType;
-import org.openqa.selenium.remote.DesiredCapabilities;*/
+
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class TestQatar {
 
 	public void testdrop() throws Exception{
-	/*	System.setProperty("webdriver.chrome.driver", "D:\\softwares\\IronWASP\\chromedriver.exe");
-		DesiredCapabilities capability = DesiredCapabilities.chrome();
-		ChromeOptions options = new ChromeOptions();
-		options.addArguments("test-type");
-		capability.setCapability(ChromeOptions.CAPABILITY, options);
-		capability.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
-		WebDriver driver = new ChromeDriver(options);*/
+	
 		WebDriver driver=new FirefoxDriver();
 		JavascriptExecutor jex=(JavascriptExecutor)driver;
 		driver.get("http://www.qatarairways.com");
